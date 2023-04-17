@@ -1,22 +1,90 @@
-import React from 'react'
 
-export default function Footer() {
+
+
+// import { useState, useEffect } from 'react';
+
+// function Footer() {
+//   const [quoteIndex, setQuoteIndex] = useState(0);
+//   const quotes = [
+//     "Food is not just fuel, it's information. It talks to your DNA and tells it what to do",
+//     "Let food be thy medicine and medicine be thy food",
+//     "Eating healthy food fills your body with energy and nutrients",
+//     "The only time to eat diet food is while you're waiting for the steak to cook.",
+//     "Food is symbolic of love when words are inadequate.",
+//     "There is no sincerer love than the love of food." ,
+//     "Food is not just eating energy. It's an experience.",
+//     "One cannot think well, love well, sleep well, if one has not dined well.",
+//     "All happiness depends on a leisurely breakfast.",
+//     "Eating is a necessity, but cooking is an art.",
+//     "Good food is good mood.",
+//   ];
+
+//   useEffect(() => {
+//     const intervalId = setInterval(() => {
+//       setQuoteIndex((prevIndex) => (prevIndex + 1) % quotes.length);
+//     }, 10000);
+
+//     return () => clearInterval(intervalId);
+//   }, []);
+
+//   return (
+//     <h1
+//       style={{
+//         padding: '25px',
+//         whiteSpace: 'nowrap',
+//         fontSize: '25px',
+//         backgroundColor: 'red',
+//         color: 'white',
+//         textAlign: 'center',
+//         borderRadius: '25px',
+//         display: 'inline-block'
+//       }}
+//     >
+//       {quotes[quoteIndex]}
+//     </h1>
+//   );
+// }
+
+// export default Footer;
+
+import { useState, useEffect } from 'react';
+
+function Footer() {
+  const [quoteIndex, setQuoteIndex] = useState(0);
+  const quotes = [    "Food is not just fuel, it's information. It talks to your DNA and tells it what to do",    "Let food be thy medicine and medicine be thy food",    "Eating healthy food fills your body with energy and nutrients",    "The only time to eat diet food is while you're waiting for the steak to cook.",    "Food is symbolic of love when words are inadequate.",    "There is no sincerer love than the love of food." ,    "Food is not just eating energy. It's an experience.",    "One cannot think well, love well, sleep well, if one has not dined well.",    "All happiness depends on a leisurely breakfast.",    "Eating is a necessity, but cooking is an art.",    "Good food is good mood.",  ];
+
+  useEffect(() => {
+    const intervalId = setInterval(() => {
+      setQuoteIndex((prevIndex) => (prevIndex + 1) % quotes.length);
+    }, 10000);
+
+    return () => clearInterval(intervalId);
+  }, []);
+
   return (
-    <div><div className="container">
-    <footer className="d-flex flex-wrap justify-content-between align-items-center py-3 my-4 border-top">
-      <div className="col-md-4 d-flex align-items-center">
-        <a href="/" className="mb-3 me-2 mb-md-0 text-muted text-decoration-none lh-1">
-        </a>
-        <span className="text-muted">© 2022 <i>GoFood</i>, Inc</span>
-      </div>
-  
-      <ul className="nav col-md-4 justify-content-end list-unstyled d-flex">
-        <li className="ms-3"><a className="text-muted" href="/"><svg className="bi" width="24" height="24"><use ></use></svg></a></li>
-        <li className="ms-3"><a className="text-muted" href="/"><svg className="bi" width="24" height="24"><use ></use></svg></a></li>
-        <li className="ms-3"><a className="text-muted" href="/"><svg className="bi" width="24" height="24"><use></use></svg></a></li>
-      </ul>
-    </footer>
-  </div>
-  </div>
-  )
+    <div
+      style={{
+        padding: '25px',
+        borderRadius: '60px',
+        overflow: 'hidden',
+        backgroundColor: 'red',
+      }}
+    >
+      <h1
+        style={{
+          whiteSpace: 'nowrap',
+          fontSize: '25px',
+          color: 'white',
+          textAlign: 'center',
+        }}
+      >
+        {quotes[quoteIndex]}
+      </h1>
+    </div>
+  );
 }
+
+export default Footer;
+
+
+

@@ -1,24 +1,21 @@
 import React, { useEffect, useState } from 'react'
 import Card from '../components/Card'
-// import Carousel from '../components/Carousel'
 import Footer from '../components/Footer'
 import Navbar from '../components/Navbar'
+
 export default function Home() {
   const [foodCat, setFoodCat] = useState([])
   const [foodItems, setFoodItems] = useState([])
   const [search, setSearch] = useState('')
+
   const loadFoodItems = async () => {
     let response = await fetch("http://localhost:5000/api/auth/foodData", {
-      // credentials: 'include',
-      // Origin:"http://localhost:3000/login",
       method: 'POST',
       headers: {
         'Content-Type': 'application/json'
       }
-
     });
     response = await response.json()
-    // console.log(response[1][0].CategoryName)
     setFoodItems(response[0])
     setFoodCat(response[1])
   }
@@ -28,7 +25,7 @@ export default function Home() {
   }, [])
 
   return (
-    <div >
+    <div>
       <div>
         <Navbar />
       </div>
@@ -37,18 +34,26 @@ export default function Home() {
 
           <div className="carousel-inner " id='carousel'>
             <div class=" carousel-caption  " style={{ zIndex: "30"}}>
-              <div className=" d-flex justify-content-center">  {/* justify-content-center, copy this <form> from navbar for search box */}
+              <div className=" d-flex justify-content-center"> 
                 <input className="form-control me-2 w-120 bg-white text-dark" type="search" placeholder="Search in here..." aria-label="Search" value={search} onChange={(e) => { setSearch(e.target.value) }} style={{ height: '80px' }} />
                 <button className="btn text-white bg-danger" onClick={() => { setSearch('') }}>X</button>
               </div>
             </div>
             <div className="carousel-item active" >
+              <div className="carousel-caption">
+              </div>
               <img src="https://source.unsplash.com/random/900x700/?burger" className="d-block w-100  " style={{ filter: "brightness(40%)" }} alt="..." />
             </div>
             <div className="carousel-item">
+              <div className="carousel-caption">
+                
+              </div>
               <img src="https://source.unsplash.com/random/900x700/?pastry" className="d-block w-100 " style={{ filter: "brightness(40%)" }} alt="..." />
             </div>
             <div className="carousel-item">
+              <div className="carousel-caption">
+
+              </div>
               <img src="https://source.unsplash.com/random/900x700/?barbeque" className="d-block w-100 " style={{ filter: "brightness(40%)" }} alt="..." />
             </div>
           </div>
@@ -62,6 +67,7 @@ export default function Home() {
           </button>
         </div>
       </div>
+
       <div className='container'> {/* boootstrap is mobile first */}
         {
           foodCat !== []
@@ -87,8 +93,12 @@ export default function Home() {
               )
             })
             : ""}
+             <div style={{ marginBottom: '90px' }}> {/* this element will have 50px space below */}
+        {/* some other elements */}
       </div>
-      <Footer />
+            
+            <Footer/>
+      </div>
     </div>
 
 

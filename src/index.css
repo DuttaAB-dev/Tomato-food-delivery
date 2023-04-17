@@ -28,3 +28,7 @@ code {
 .carousalImg{
   object-fit: contain !important;
 }
+.carousal-caption{
+  font-size: 50px;
+  color:white,
+}
