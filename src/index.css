@@ -18,8 +18,12 @@ code {
 .nav-link{
   color: white !important;
 }
+.bg-pink {
+  background-color: rgb(210, 10, 10);
+}
+
 #carousel{
-  max-height: 500px;
+  max-height: 800px;
 }
 .carousalImg{
   object-fit: contain !important;
