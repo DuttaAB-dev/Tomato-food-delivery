@@ -36,12 +36,12 @@ export default function Login() {
   }
 
   return (
-    <div style={{backgroundImage: 'url("https://images.pexels.com/photos/326278/pexels-photo-326278.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1")', height: '100vh', backgroundSize: 'cover' }}>
+    <div style={{backgroundImage: 'url("https://images.pexels.com/photos/1566837/pexels-photo-1566837.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1")', height: '100vh', backgroundSize: 'cover' }}>
       <div>
         <Navbar />
       </div>
       <div className='container'>
-        <form className='w-50 m-auto mt-5 border bg-dark border-success rounded' onSubmit={handleSubmit}>
+          <form className='w-60 h-90 m-auto mt-5 border bg-light border-success rounded' onSubmit={handleSubmit} style={{ backgroundColor: '#F6D9D9' }}>
           <div className="m-3">
             <label htmlFor="exampleInputEmail1" className="form-label">Email address</label>
             <input type="email" className="form-control" name='email' value={credentials.email} onChange={onChange} aria-describedby="emailHelp" />
@@ -59,6 +59,7 @@ export default function Login() {
     </div>
   )
 }
+
 
 
 // , 'Accept': 'application/json',
