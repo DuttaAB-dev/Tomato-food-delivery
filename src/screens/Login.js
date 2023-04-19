@@ -52,7 +52,7 @@ export default function Login() {
             <input type="password" className="form-control border-danger" value={credentials.password} onChange={onChange} name='password' />
           </div>
           <button type="submit" className="m-3 btn btn-danger">Submit</button>
-          <Link to="/signup" className="m-3 mx-1 btn btn-light border-success text-danger">New User</Link>
+          <Link to="/signup" className="m-3 mx-1 btn btn-light border-danger text-danger">New User</Link>
         </form>
 
       </div>
