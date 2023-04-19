@@ -87,13 +87,13 @@ export default function Signup() {
               </fieldset>
             </div>
             <div className="m-3">
-              <button type="button" onClick={handleClick} name="geolocation" className=" btn btn-success">Click for current Location </button>
+              <button type="button" onClick={handleClick} name="geolocation" className=" btn btn-danger">Click for current Location </button>
             </div>
             <div className="m-3">
               <label htmlFor="exampleInputPassword1" className="form-label">Password</label>
               <input type="password" className="form-control border-danger" value={credentials.password} onChange={onChange} name='password' />
             </div>
-            <button type="submit" className="m-3 btn btn-success">Submit</button>
+            <button type="submit" className="m-3 btn btn-danger">Submit</button>
             <Link to="/login" className="m-3 mx-1 btn btn-light border-success text-danger">Already a user</Link>
           </form>
         </div>
