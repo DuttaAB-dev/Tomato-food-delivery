@@ -1,10 +1,20 @@
-# Getting Started with Create React App
-
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
+First you need to have [nodemon](https://www.npmjs.com/package/nodemon) installed on your system along with node js and mongodb.
 
-In the project directory, you can run:t
+Go to the backend folder and then run the following command to install all dependencies for the backend:
+
+### `yarn install`
+
+Then start the backend with the following command:
+### `nodemon start`
+
+
+Then go back to the project directory and run the following command to install all the project dependencies:
+
+### `yarn install`
+
+In the project directory, you can run:
 
 
 ### `npm start`
