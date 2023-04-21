@@ -10,7 +10,7 @@ module.exports = function (callback) {
             //var database = mongoose.connection.db;
             //console.log(database)
             console.log("connected to mongo")
-            const foodCollection = await mongoose.connection.db.collection("food_items");
+            const foodCollection = await mongoose.connection.db.collection("food _items");
             foodCollection.find({}).toArray(async function (err, data) {
                 const categoryCollection = await mongoose.connection.db.collection("foodCategory");
                 categoryCollection.find({}).toArray(async function (err, Catdata) {
