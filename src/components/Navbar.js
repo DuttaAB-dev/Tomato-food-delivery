@@ -48,7 +48,7 @@ export default function Navbar(props) {
                                 <Link className="btn bg-white text-danger mx-1" to="/signup">Signup</Link>
                             </form> :
                             <div>
-                                <div className="btn bg-white text-success mx-2 " onClick={loadCart}>
+                                <div className="btn bg-white text-danger mx-2 " onClick={loadCart}>
                                     <Badge color="secondary" badgeContent={items.length} >
                                         <ShoppingCartIcon />
                                     </Badge>
@@ -57,7 +57,7 @@ export default function Navbar(props) {
 
                                 {cartView ? <Modal onClose={() => setCartView(false)}><Cart></Cart></Modal> : ""}
 
-                                <button onClick={handleLogout} className="btn bg-white text-success" >Logout</button></div>}
+                                <button onClick={handleLogout} className="btn bg-white text-danger" >Logout</button></div>}
                     </div>
                 </div>
             </nav>
