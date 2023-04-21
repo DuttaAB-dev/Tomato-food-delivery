@@ -7,7 +7,7 @@ export default function Cart() {
   if (data.length === 0) {
     return (
       <div>
-        <div className='m-5 w-100 text-center fs-3'>The Cart is Empty!</div>
+        <div className='m-5 w-100 text-center fs-3' style={{color: 'red'}}>The Cart is Empty!</div>
       </div>
     )
   }
@@ -57,22 +57,34 @@ export default function Cart() {
           </thead>
           <tbody>
             {data.map((food, index) => (
-              <tr>
-                <th scope='row' >{index + 1}</th>
-                <td >{food.name}</td>
-                <td>{food.qty}</td>
-                <td>{food.size}</td>
-                <td>{food.price}</td>
-                <td ><button type="button" className="btn p-0"><Delete onClick={() => { dispatch({ type: "REMOVE", index: index }) }} /></button> </td></tr>
+              <tr key={index}>
+                <th scope='row' style={{ color: 'white' }}>{index + 1}</th>
+                <td style={{ color: "white" }}>{food.name}</td>
+                <td style={{ color: "white" }}>{food.qty}</td>
+                <td style={{ color: "white" }}>{food.size}</td>
+                <td style={{ color: "white" }}>{food.price}</td>
+                <td>
+                    <button type="button" className="btn p-0" style={{ color: 'white', backgroundColor: 'red' }}>
+                      <Delete onClick={() => { dispatch({ type: "REMOVE", index: index }) }} />
+                    </button>
+                </td>
+
+              </tr>
             ))}
-          </tbody>
+</tbody>
+
         </table>
-        <div><h1 className='fs-2'>Total Price: {totalPrice}/-</h1></div>
+        <div>
+            <h1 className='fs-2' style={{ color: 'white' }}>Total Price: {totalPrice}/-</h1>
+        </div>
+
         <div>
           <button className='btn bg-danger mt-5 ' onClick={handleCheckOut} > Check Out </button>
         </div>
       </div>
-      </div>
 
+
+
+    </div>
   )
 }
